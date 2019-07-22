@@ -1,5 +1,3 @@
-import {API_URL} from './constants/';
-
 describe("ttsoft2", () => {
     it("should visits website", () => {
         cy.visit(API_URL);
@@ -53,8 +51,30 @@ describe("ttsoft2", () => {
         cy.get(".confirm", {force: true}).click();
         cy.wait(500)
         cy.get("button.close")
-
     })
+
+// Przykład
+        // it("should not log in correctly", () => {
+        //     cy.get("select").select("ADMIN");
+        //     cy.get("#exampleInputPassword1").type("1234");
+        //     cy.get("#buttonLogIn").click();
+        //     // Assert
+        //     cy.url().should("eq", "http://192.168.147.30:8080/EObiekt/login/error");
+        // })
+        // it("should log in and log out correctly", () => {
+        //     cy.get("select").select("ADMIN");
+        //     cy.get("#buttonLogIn").click();
+        //     // Assert
+        //     cy.url().should("eq", "http://192.168.147.30:8080/EObiekt/admin/ticket");
+        //     cy.get("#leftMenu .r-nav-bottom > .r-nav-other > div:last-child > a").click();
+        //     cy.get("#btnLogout").click();
+        //     cy.get(".r-margin-center-8").find(".alert.alert-success").should(function ($div) {
+        //         expect($div).to.have.length(1);
+        //         expect($div).to.have.text("Nastąpiło prawidłowe wylogowanie się.")
+        //     })
+        // })
+
+   
     // it("should log out correctly", () => {
     //     cy.get("#leftMenu .r-nav-bottom > .r-nav-other > div:last-child > a").click();
     //     cy.get("#btnLogout").click();

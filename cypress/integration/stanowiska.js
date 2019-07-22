@@ -13,6 +13,7 @@ describe("DODAWANIE_ASORTYMENTU DO STANOWISKA", () => {
     })
     it("should add and remove assortmen to position", () => {
         cy.get("select").select("ADMIN");
+        cy.get("input#exampleInputPassword1").type("jb4go32w");
         cy.get("#buttonLogIn").click();
         // Assert
         cy.url().should("eq", "http://192.168.147.30:8080/EObiekt/admin/ticket");
@@ -21,13 +22,13 @@ describe("DODAWANIE_ASORTYMENTU DO STANOWISKA", () => {
         cy.get("div.col-lg-3.adminMenuItem:nth-of-type(21)").click();
         // cy.get("table#TTtableactivePlace tr.even:nth-child(6)").click();
         //cy.get("#TTtableactivePlace tbody tr:nth-child(6)").click();
-        cy.get("tr.even:nth-child(6)").click();
+        cy.get("tr.even:nth-child(2)").click();
         cy.get("button#assortButton").click();
-        cy.get("table#availableAssortTable tbody tr:nth-child(2372)").click().click();
+        cy.get("table#availableAssortTable tbody tr:nth-child(1)").click().click();
         cy.get("button#saveChanges").click();
         // Assert
         cy.url().should("eq", "http://192.168.147.30:8080/EObiekt/admin/activePlace/");
-        cy.get("tr.even:nth-child(6)").click();
+        cy.get("tr.even:nth-child(2)").click();
         cy.get("button#assortButton").click();
         //  Assert
         cy.get("table#selectedAssortTable").find("tr.selectedAssort.odd td:nth-child(2)").should(function (TESTSYSTEMU) {
